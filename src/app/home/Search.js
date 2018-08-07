@@ -8,6 +8,7 @@ const Search = (props) => {
                 color: 'black'
             }} className="fa">&#xf002;</i>
             <input onChange={props.search} value={props.value} type='text' name='search' placeholder='Search Persons...' />
+            <p className='lastUpdate'>Last update:</p>
         </div>
     )
 }
