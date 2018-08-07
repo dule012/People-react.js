@@ -3,35 +3,56 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+.row {
+  position: relative;
+}
 header {
   background-color: #ec6f75;
   padding: 0.5% 0;
   color: white;
 }
-header p, header i,header span {
-  display: inline-block;
-  cursor: pointer;
-}
-header p {
+
+.col-6 {
   font-size: 24px;
-  margin-left: 45%;
-  margin-right: 35%;
+  padding-left: 45%;
+  text-align: right;
+
 }
 
-header i {
-  margin: 0 1%;
+.col-2{
+  font-size: 24px;
+  cursor: pointer;
 }
+
 span{
   color: white;
-  text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.i1 {
+  position: absolute;
+  left: 72%;
+}
+.i2 {
+  position: absolute;
+  left: 85%;
+  top: 10%;
+}
+.i3{
+  position: absolute;
+  left: 92%;
+  top: 10%;
+}
+.i4 {
+  position: absolute;
+  left: 92%;
+  top: 10%;
 }
 .cardGrid{
   height: 240px;
-  border: 1px solid black;
   padding: 0;
   position: relative;
+  margin-top: 5%;
 }
 .cardGrid img {
   width: 100%;
@@ -73,7 +94,13 @@ span{
   font-weight: bold;
   z-index: 2;
 }
-
+.countingMaleFemale{
+  position: absolute;
+  top: 85%;
+  left: 15%;
+  font-size: 16px;
+  font-weight: bold;
+}
 .notFound {
   width: 25%;
   height: 25%;
@@ -109,16 +136,29 @@ footer {
   color: black;
   position: absolute;
   top: 10%;
-  left: 90%;
+  left: 80%;
 }
-.cardList{
-  border: 1px solid black;
+.cardList {
+  margin-top: 5%;
 }
 .cardList div {
-  border: 1px solid black;
+  position: relative;
+  padding: 1.5% 0;
+}
+.cardList p {
+  margin-bottom: 0;
 }
 .cardList img {
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+  height: 70%;
+}
+.name {
+  font-weight: bold;
 }
 .sk-cube-grid {
   width: 40px;
@@ -183,9 +223,34 @@ footer {
 }
 
 @media screen and (max-width: 576px){
+  .col-6 {
+    font-size: 16px;
+    padding-left: 0;
+    text-align: left;
+  }
+  .col-2 {
+    font-size: 16px;
+  }
+  .i1{
+    left: 50%;
+  }
+  .i2 {
+    left: 75%;
+  }
+  .i3{
+    left: 85%;
+  }
+  .i4{
+    left: 85%;
+  }
   .lastUpdate{
-    font-size: 10px;
-    right: 40%;
+    font-size: 12px;
+    right: 2%;
+  }
+  .countingMaleFemale{
+    font-size: 11px;
+    left: 0;
+    width: 40%;
   }
   .notFound p {
     font-size: 14px;

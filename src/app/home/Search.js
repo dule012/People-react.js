@@ -9,6 +9,7 @@ const Search = (props) => {
             }} className="fa">&#xf002;</i>
             <input onChange={props.search} value={props.value} type='text' name='search' placeholder='Search Persons...' />
             <p className='lastUpdate'>Last activity:{props.timeCounter < 60 ? `${props.timeCounter} minutes ago`: `${props.timeCounter % 60} hours ago`}</p>
+            <p className='countingMaleFemale'>{`Search results: ${props.male} Male, ${props.female}  Female`}</p>
         </div>
     )
 }
