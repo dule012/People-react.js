@@ -73,6 +73,53 @@ span{
   font-weight: bold;
   z-index: 2;
 }
+
+.notFound {
+  width: 25%;
+  height: 25%;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-bottom: 5%;
+ 
+}
+.notFound img {
+  display: block;
+  margin: auto;
+  width: 30%;
+  height: 30%;
+}
+.notFound p {
+  font-size: 34px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #ec6f75;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.about h2 {
+  padding-left: 5%;
+  position: relative;
+}
+.about h2 span {
+  color: black;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+}
+.cardList{
+  border: 1px solid black;
+}
+.cardList div {
+  border: 1px solid black;
+}
+.cardList img {
+  border-radius: 50%;
+}
 .sk-cube-grid {
   width: 40px;
   height: 40px;
@@ -139,5 +186,8 @@ span{
   .lastUpdate{
     font-size: 10px;
     right: 40%;
+  }
+  .notFound p {
+    font-size: 14px;
   }
 }

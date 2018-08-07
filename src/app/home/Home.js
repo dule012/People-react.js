@@ -6,6 +6,7 @@ import ListPersonGrid from './ListPersonGrid'
 import Search from './Search'
 import NotFound from './NotFound'
 import Loading from './Loading'
+import ListPersonList from './ListPersonList'
 
 class Home extends Component {
     constructor(props) {
@@ -34,8 +35,13 @@ class Home extends Component {
                 arrPeople: JSON.parse(localStorage.getItem('a'))
             })
         }
-        
+        window.addEventListener('click', () => {
+            this.setState({
+                timeCounter: 0
+            })
+        })
     }
+
 
     changeView = () => {
         this.setState((prevState) => {
@@ -62,22 +68,24 @@ class Home extends Component {
             value: e.target.value,
             filteredArr: filtered
         })
-        console.log(this.state.filteredArr)
     }
 
-    lastUpdate = () => {
-        setInterval(()=>{
+    interval = setInterval(() => {
+        this.setState((prevState) => {
+            return {
+                timeCounter: prevState.timeCounter + 1
+            }
+        })
+    }, 60000)
 
-        },60000)
-    }
 
     render() {
         return (
             <React.Fragment>
                 <Header view={this.state.view} changing={this.state.changeView} refresh={this.state.refresh} />
-                <Search search={this.state.search} value={this.state.value} />
+                <Search search={this.state.search} value={this.state.value} timeCounter={this.state.timeCounter} />
                 {this.state.arrPeople.length === 0 ? <Loading /> : ''}
-                <ListPersonGrid arr={this.state.value === '' ? this.state.arrPeople : this.state.filteredArr} />
+                {this.state.view === true ? <ListPersonGrid arr={this.state.value === '' ? this.state.arrPeople : this.state.filteredArr} /> : <ListPersonList arr={this.state.value === '' ? this.state.arrPeople : this.state.filteredArr} />}
                 {this.state.filteredArr.length === 0 && this.state.value !== '' ? <NotFound /> : ''}
                 <Footer />
             </React.Fragment>
